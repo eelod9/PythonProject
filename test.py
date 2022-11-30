@@ -1,6 +1,6 @@
 import math
 import requests
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 print("hello")
 #testing
@@ -10,7 +10,7 @@ def request(url):
     except requests.exceptions.ConnectionError:
         pass
 
-target_url = "google.com"
+target_url = "http://google.com"
 response = request(target_url)
 print(response.content)
     
