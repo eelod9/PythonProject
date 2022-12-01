@@ -1,16 +1,9 @@
-import math
+from bs4 import BeautifulSoup as bs
 import requests
-from bs4 import BeautifulSoup
+url = "https://www.stackoverflow.com/"
 
-print("hello")
-#testing
-def request(url):
-    try:
-        return requests.get(url)
-    except requests.exceptions.ConnectionError:
-        pass
+html_content = requests.get(url).text
+soup = bs(html_content, "html.parser")
 
-target_url = "http://google.com"
-response = request(target_url)
-print(response.content)
-    
+if soup.find('title').text is not None:
+  print(soup.find('title').text)
