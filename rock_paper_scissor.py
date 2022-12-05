@@ -1,9 +1,47 @@
 import random
+def printImg(u):
+
+    rock= '''
+        _______
+    ---'   ____)
+        (_____)
+        (_____)
+        (_____)
+    ---.__(__)
+    '''
+
+    paper = '''
+            _______
+        ---'   ____)___
+                _______)
+                _______)
+                _______)
+        ---.__________)
+        '''
+
+    scissors = '''
+            _____
+        ---'   __)______
+                ________)
+            ____________)
+            (____)
+        ---.(____)
+        '''
+    if u=="rock":
+        return(rock)
+    elif u == "paper":
+        return(paper)
+    elif u == "scissors":
+        return(scissors)
+    
+
 
 user_action = input("Enter a choice (rock, paper, scissors): ")
+
 possible_actions = ["rock", "paper", "scissors"]
 computer_action = random.choice(possible_actions)
-print(f"\nYou chose {user_action}, computer chose {computer_action}.\n")
+
+print(f"\nYou chose {printImg(user_action)} \n Computer chose {printImg(computer_action)}\n")
 
 if user_action == computer_action:
     print(f"Both players selected {user_action}. It's a tie!")
