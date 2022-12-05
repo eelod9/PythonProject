@@ -17,19 +17,19 @@ nr_numbers = int(input(f"How many numbers would you like?\n"))
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
 
 pw =[]
-for num in range(0,nr_letters):
+for char in range(1,nr_letters+1):
     pw.append(random.choice(letters))
-for num in range(0, nr_symbols):
+for char in range(1, nr_symbols+1):
     pw.append(random.choice(symbols))
-for num in range(0, nr_numbers):
+for char in range(1, nr_numbers+1):
     pw.append(random.choice(numbers))
 
 
-print(f"What is pw : {pw}")
+#print(f"What is pw : {pw}")
 test = ["hello", "what"]
 random.shuffle(pw)
-print(pw)
-#print(random.shuffle(pw))
+#print(pw)
+
 
 final = "".join(pw)
 print(final)
