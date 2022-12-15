@@ -11,6 +11,64 @@ print("Hello, Welcome to Hanman. Let's start")
 #name = input("What is you name?")
 #print(f'Hello {name}. Prepare to lose!')
 
+def printHangman(tries):
+    match tries:
+        case 0:
+            print(''' ____
+                     |    |
+           DEAD      O    |
+                    /|\   |
+                    / \  _|_ 
+                     
+                     ''')
+        case 1:
+            print(''' ____
+                     |    |
+                     O    |
+                    /|    |
+                    / \  _|_ 
+                     
+                     ''')
+        case 2:
+            print(''' ____
+                     |    |
+                     O    |
+                     |    |
+                    / \  _|_ 
+                     
+                     ''')
+        case 3:
+            print(''' ____
+                     |    |
+                     O    |
+                     |    |
+                    /    _|_ 
+                     
+                     ''')
+        case 4:
+            print(''' ____
+                     |    |
+                     O    |
+                     |    |
+                         _|_ 
+                     
+                     ''')
+        case 5:
+            print(''' ____
+                     |    |
+                     O    |
+                          |
+                         _|_ 
+                     
+                     ''')
+        case 6:
+            print(''' ____
+                     |    |
+                          |
+                          |
+                         _|_ 
+                     
+                     ''')
 
 
 tries = 6 #o
@@ -23,6 +81,7 @@ print(randomWord)
 while tries > 0:
     
     print(statusArray)
+    printHangman(tries)
     guessedLetter= input("Guess: ")
 
     found = False
@@ -33,17 +92,18 @@ while tries > 0:
              val = map[guessedLetter]
              existsInMap = True
         except:
-            print("does not exist in map")
+            #print("does not exist in map")
+            pass
         #if guessedLetter not in map:
         if not existsInMap:
             for k, letter in enumerate(randomWord):
                 if guessedLetter == letter:
-                    print(f"{guessedLetter} and letter {letter}")
+                    #print(f"{guessedLetter} and letter {letter}")
                     map[letter] = True
                     found = True
                     statusArray[k] = letter
                     done += 1
-                    print(f"yes ---{guessedLetter}--- is correct")
+                    #print(f"yes ---{guessedLetter}--- is correct")
                     #break
                 elif not found:
                     map[guessedLetter] = False
@@ -63,6 +123,7 @@ while tries > 0:
         print("You have guess all alphabets correctly before man hanged. Congrats")
         break
     elif found:
+        print(statusArray)
         guessedWord = input("Wanna guess the word?")
         if guessedWord == randomWord:
             print("You did it!!!")
@@ -71,6 +132,7 @@ while tries > 0:
             print("Wrong word")
     else:
         print(f"{tries} left!")
+
 
     
 
