@@ -14,7 +14,8 @@ print("Hello, Welcome to Hanman. Let's start")
 def printHangman(tries):
     match tries:
         case 0:
-            print(''' ____
+            print('''
+                      ____
                      |    |
            DEAD      O    |
                     /|\   |
@@ -22,7 +23,8 @@ def printHangman(tries):
                      
                      ''')
         case 1:
-            print(''' ____
+            print(''' 
+                      ____
                      |    |
                      O    |
                     /|    |
@@ -30,7 +32,8 @@ def printHangman(tries):
                      
                      ''')
         case 2:
-            print(''' ____
+            print(''' 
+                      ____
                      |    |
                      O    |
                      |    |
@@ -38,7 +41,8 @@ def printHangman(tries):
                      
                      ''')
         case 3:
-            print(''' ____
+            print(''' 
+                      ____
                      |    |
                      O    |
                      |    |
@@ -46,7 +50,8 @@ def printHangman(tries):
                      
                      ''')
         case 4:
-            print(''' ____
+            print('''
+                      ____
                      |    |
                      O    |
                      |    |
@@ -54,7 +59,8 @@ def printHangman(tries):
                      
                      ''')
         case 5:
-            print(''' ____
+            print('''
+                      ____
                      |    |
                      O    |
                           |
@@ -62,7 +68,8 @@ def printHangman(tries):
                      
                      ''')
         case 6:
-            print(''' ____
+            print('''
+                      ____
                      |    |
                           |
                           |
@@ -77,12 +84,12 @@ tries = 6 #o
 statusArray = ["-"] * len(randomWord)
 done = 0
 map={}
-print(randomWord)
+#print(randomWord)
 while tries > 0:
     
     print(statusArray)
     printHangman(tries)
-    guessedLetter= input("Guess: ")
+    guessedLetter= input("Guess: ").lower()
 
     found = False
     existsInMap = False
@@ -119,6 +126,7 @@ while tries > 0:
 
     if tries ==0:
         print("Game Over")
+        printHangman(tries)
     elif done == len(randomWord):
         print("You have guess all alphabets correctly before man hanged. Congrats")
         break
