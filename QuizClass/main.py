@@ -1,9 +1,13 @@
-from data import question_data
 from question_model import Question
-import quiz_brain
+from data import question_data
+
+questionBank = []
 
 for key, value in enumerate(question_data):
     text = value["text"]
     answer = value["answer"]
     print(text)
-    questionBank =+ Question(text, answer)
+    new_question = Question(text, answer)
+    questionBank.append(new_question)
+
+print(questionBank)
