@@ -27,9 +27,17 @@ def multiplePolygons(edges):
         timmy.forward(100)
 
 
-for i in range(3,11):
-    multiplePolygons(i)
+#for i in range(3,11):
+ #   multiplePolygons(i)
 
+timmy.speed("fast")
+while True:
+    timmy.pencolor(random.choice(color_list))
+    timmy.pensize(10)
+    pos = random.choice(('Left', 'Right'))
+    timmy.left(90) if pos == 'Left' else timmy.right(90)
+    timmy.forward(30)
+    
 
    
     
