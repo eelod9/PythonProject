@@ -1,7 +1,12 @@
-from turtle import Turtle,Screen
-import random
+from turtle import Turtle, Screen
 
-timmy = Turtle()
+import random
+import turtle as t
+
+t.colormode(255)
+
+
+timmy = t
 timmy.shape("turtle")
 timmy.color("#FFB6C1")
 def dashed_line():
@@ -16,10 +21,20 @@ for _ in range(4):
     timmy.right(90)
     dashed_line()
 """
-color_list = ["#FF0000","#98FB98","#00FFFF","#EE82EE", "#9400D3", "#FFA500", "#87CEFA"]
+
+
+
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    color = (r,g,b)
+    return color
+
+
 def multiplePolygons(edges):
     angle = 360 /edges
-    random_color  = random.choice(color_list)
+    random_color  = random_color()
     timmy.pencolor(random_color)
     timmy.pensize(10)
     for _ in range(edges):
@@ -29,13 +44,13 @@ def multiplePolygons(edges):
 
 #for i in range(3,11):
  #   multiplePolygons(i)
-
+directions =[0, 90, 180, 270]
 timmy.speed("fast")
 while True:
-    timmy.pencolor(random.choice(color_list))
+    timmy.pencolor(random_color())
     timmy.pensize(10)
-    pos = random.choice(('Left', 'Right'))
-    timmy.left(90) if pos == 'Left' else timmy.right(90)
+    pos = random.choice(directions)
+    timmy.setheading(pos)
     timmy.forward(30)
     
 
