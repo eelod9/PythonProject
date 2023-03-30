@@ -22,6 +22,14 @@ class Snake:
         t.penup()
         t.goto(position)
         self.tlist.append(t)
+    
+    def reset(self):
+        for seg in self.tlist:
+            seg.goto(1000,1000)
+        self.tlist.clear()
+        self.create_snake()
+        self.head = self.tlist[0]
+        
 
     def extend(self):
         self.add_segment(self.tlist[-1].position())
@@ -33,6 +41,7 @@ class Snake:
             new_y = self.tlist[seg_num - 1].ycor()
             self.tlist[seg_num].goto(new_x,new_y)
         self.head.forward(MOVE_DISTANCE)
+    
     
     def up(self):
         if self.head.heading() != DOWN:
