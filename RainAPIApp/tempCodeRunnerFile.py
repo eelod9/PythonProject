@@ -1,1 +1,0 @@
-#$Env:myphone = 'phone number here'
