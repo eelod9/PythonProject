@@ -1,0 +1,32 @@
+.pink-text{
+    color: pink;
+}
+h1{
+    font-size:  110px;
+   font-family: 'Public Sans', sans-serif;
+   text-align: center;
+}
+.color-title{
+    font-weight: normal;
+
+}
+#red{
+    color:red;
+}
+#blue{
+    color:blue;
+}
+#yellow{
+    color:yellow;
+}
+#green{
+    color:green;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 30px solid black;
+    
+}
