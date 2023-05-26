@@ -1,0 +1,32 @@
+(function (r, o, k, t, n, e, w, a, _) {
+  r._ROKT_ = n;
+  r[n] = r[n] || {
+    id: t,
+    h: w,
+    lc: [],
+    it: new Date(),
+    onLoaded: function (c) {
+      r[n].lc.push(c);
+    },
+  };
+  a = o.createElement('script');
+  a.type = 'text/javascript';
+  a.async = !0;
+  a.src = k;
+  if (e) {
+    a.integrity = e;
+    a.crossOrigin = 'anonymous';
+  }
+  _ = o.getElementsByTagName('script')[0];
+  _.parentNode.insertBefore(a, _);
+})(
+  window,
+  document,
+  'https://apps.rokt.com/wsdk/integrations/snippet.js',
+  '2495139475279371053_e9ee3ab5b79a4e4f99b0215fbf028b4a',
+  'rokt'
+);
+
+rokt.onLoaded(function (rokt) {
+  rokt.init({ skipInitialSelection: true });
+});
