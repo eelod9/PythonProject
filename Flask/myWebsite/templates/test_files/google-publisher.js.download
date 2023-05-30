@@ -1,2 +1,0 @@
-// Script is async initialized in `head`
-window.googletag = window.googletag || { cmd: [] };

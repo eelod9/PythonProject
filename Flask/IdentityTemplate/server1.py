@@ -1,5 +1,5 @@
 #.venv\Scripts\Activate.ps1
-#ran $env:FLASK_APP="server.py" and then flask run
+#ran $env:FLASK_APP="server1.py" and then flask run
 #turn on debug mode =>app.run(debug=True)
 
 from flask import Flask, render_template
